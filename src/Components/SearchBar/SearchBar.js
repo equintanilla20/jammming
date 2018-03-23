@@ -24,11 +24,21 @@ class SearchBar extends React.Component {
 		this.props.onSearch(this.state.search);
 	}
 
+	handleKeyPress(event) {
+		if(event.key === 'Enter') {
+			console.log('Enter pressed');
+			//this.props.onSearch(this.state.search);
+		};
+	}
+
 	render() {
 		return (
 			<div className="SearchBar">
- 				<input placeholder="Enter A Song, Album, or Artist" onChange={this.handleTermChange}/>
-  				<a onClick={this.search}>SEARCH</a>
+ 				<input 
+ 					placeholder="Enter A Song, Album, or Artist" 
+ 					onChange={this.handleTermChange} 
+ 					onKeyUp={this.handleKeyPress}/>
+  				<a onClick={this.search} >SEARCH</a>
 			</div>
 		)
 	}
