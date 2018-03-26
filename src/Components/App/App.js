@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       searchResults: [],
       playlistName: 'New Playlist',
-      playlistTracks: []
+      playlistTracks: [],
     };
 
     this.addTrack = this.addTrack.bind(this);
@@ -62,7 +62,10 @@ class App extends Component {
         <div className="App">
           <SearchBar onSearch={this.search} />
           <div className="App-playlist">
-            <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack}/>
+            <SearchResults 
+              searchResults={this.state.searchResults} 
+              onAdd={this.addTrack}
+            />
             <Playlist 
               playlistTracks={this.state.playlistTracks} 
               playlistName={this.state.playlistName} 
